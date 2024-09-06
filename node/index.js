@@ -4,13 +4,13 @@ const app = express();
 
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT,()=>{
     console.log("Listening on port:", 3000);
 });
 
-app.get("/",(request,response)=>{
+app.get("/hello",(request,response)=>{
     const status = {
         "Instancia":"Instancia #2 - API #2",
         "Curso": "Seminario de Sistemas 1",
@@ -19,4 +19,7 @@ app.get("/",(request,response)=>{
         "Estudiante":"Pablo García González - 201901107"
     };
     response.send(status);
+});
+app.get("/",(request,response)=>{
+    response.status(200);
 });

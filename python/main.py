@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/hello")
 async def read_root():
     return {
         "Instancia":"Instancia #1 - API #1",
@@ -11,3 +11,7 @@ async def read_root():
         "Periodo":"2do Semestre 2024",
         "Estudiante":"Pablo García González - 201901107"
     }
+
+@app.get("/")
+async def elb():
+    pass
